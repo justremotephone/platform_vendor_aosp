@@ -50,6 +50,8 @@ PRODUCT_PACKAGES += \
     LatinIME \
     Stk
     
+ADDITIONAL_DEFAULT_PROPERTIES += \
+    ro.adb.secure=$(if $(filter userdebug eng,$(TARGET_BUILD_VARIANT)),0,1)
 # For keyboard gesture typing
 PRODUCT_COPY_FILES += \
     vendor/aosp/prebuilt/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
