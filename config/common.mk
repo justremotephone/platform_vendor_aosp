@@ -4,10 +4,6 @@ PRODUCT_BRAND ?= JDCTeam
 PRODUCT_COPY_FILES += \
     vendor/aosp/prebuilt/common/bootanimation/bootanimation.zip:system/media/bootanimation.zip
 
-# SuperSU
-PRODUCT_COPY_FILES += \
-    vendor/aosp/prebuilt/common/supersu/supersu.zip:system/supersu/supersu.zip
-
 PRODUCT_PROPERTY_OVERRIDES += \
     keyguard.no_require_sim=true \
     ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
@@ -50,14 +46,9 @@ PRODUCT_PACKAGES += \
 
 # Custom JDCTeam packages
 PRODUCT_PACKAGES += \
-    BluetoothExt \
-    GoogleDialer \
-    LatinIME \
     Launcher3 \
-    LayersManager \
-    OTAUpdates \
-    Stk \
-    Toolbox
+    LatinIME \
+    Stk
     
 # ADB authentication
 ADDITIONAL_DEFAULT_PROPERTIES += \
@@ -102,16 +93,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
     vendor/aosp/prebuilt/common/lib/hw/consumerir.msm8960.old:system/lib/hw/consumerir.msm8960.old
     
-# Stagefright FFMPEG plugin
-PRODUCT_PACKAGES += \
-    libffmpeg_extractor \
-    libffmpeg_omx \
-    media_codecs_ffmpeg.xml
-    
-PRODUCT_PROPERTY_OVERRIDES += \
-    media.sf.omx-plugin=libffmpeg_omx.so \
-    media.sf.extractor-plugin=libffmpeg_extractor.so
-
 # by default, do not update the recovery with system updates
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.recovery_update=false
